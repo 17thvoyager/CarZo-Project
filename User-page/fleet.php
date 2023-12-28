@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include("DataBase/user-config.php");
 
 ?>
 
@@ -73,17 +77,17 @@
             <br>
             <div class="row">
                 <?php
-                $sql = "SELECT `car_model`, `lease_price`, `car_image`, 'car_passengers', 'car_lagauge','car_doors', 'car_transmission'  
-                FROM `car_collection`";
+                $sql = "SELECT * FROM `car_collection`";
                 $res = mysqli_query($con, $sql);
 
                 if ($res) {
                     while ($row = mysqli_fetch_array($res)) {
+                        $carID = $row['car_id'];
                         $carModel = $row['car_model'];
                         $leasePrice = $row['lease_price'];
                         $carImage = $row['car_image'];
                         $carPassenger = $row['car_passengers'];
-                        $carLagauge = $row['car_lagauge'];
+                        $carLagauge = $row['car_luggage'];
                         $carDoors = $row['car_doors'];
                         $carTransmission = $row['car_transmission'];
 
@@ -101,7 +105,7 @@
                                         <?php echo $carModel; ?>
                                     </h4>
                                     <p>
-                                        <i class="fa fa-user" title="passengers">
+                                        <i class="fa fa-user" title="passengers" >
                                             <?php echo $carPassenger ?>
                                         </i> &nbsp;&nbsp;&nbsp;
                                         <i class="fa fa-briefcase" title="luggages">
@@ -115,14 +119,15 @@
                                         </i>
                                     </p>
                                     <ul class="social-icons">
-                                        <li><a href="#">+ Book Now</a></li>
+                                    
+                                    <a  href='carPage.php?carID=<?php echo $carID;?>'>+ Book Now</a>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     <?php }
                 } else {
-                    echo "query has failed";
+                    echo "<script>alert('problem in the query');</script>";
                 }
                 ?>
 

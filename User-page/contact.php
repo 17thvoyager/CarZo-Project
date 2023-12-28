@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    include("header.php");
+    ?>
   <head>
 
     <meta charset="utf-8">
@@ -36,9 +38,7 @@
     
     
     <!-- ***** Header Area Start ***** -->
-    <?php
-    include("header.php");
-    ?>
+    
     <!-- ***** Header Area End ***** -->
 
     <section class="section section-bg" id="call-to-action" style="background-image: url(assets/images/banner-image-1-1920x500.jpg)">
@@ -108,12 +108,12 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div id="map">
-                      <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d981.8387147564819!2d76.39231426949162!3d10.15178299937261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080882748f4a6f%3A0x30b2ebe45d968458!2sCochin%20International%20Airport!5e0!3m2!1sen!2sin!4v1702660789019!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form section-bg" style="background-image: url(assets/images/contact-1-720x480.jpg)">
-                        <form id="contact" action="" method="post">
+                        <form id="contact" action="./DataBase/contactAction.php" method="post">
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
@@ -155,8 +155,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        Copyright © 2020 Company Name
-                        - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2023 CarZo
+                         <a href="./index.php">CarZO.com</a>
                     </p>
                 </div>
             </div>

@@ -148,7 +148,7 @@
               <input type="text" class="form-control" placeholder="Name" required name="name"/>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Phone Number" required name="phno"/>
+                 <input type="tel" class="form-control" placeholder="Phone Number" required name="phno" maxlength="10" pattern="[0-9]*"/>
             </div>
             <div class="mb-3">
               <input type="email" class="form-control" placeholder="Email address" required name="email"/>

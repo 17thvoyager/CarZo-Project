@@ -12,7 +12,6 @@ require './PHPMailer/src/Exception.php';
 require './PHPMailer/src/PHPMailer.php';
 require './PHPMailer/src/SMTP.php';
 
-echo "hello";
 
 function generateVerificationCode() {
     return random_int(100000, 999999);
@@ -88,24 +87,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// if (isset($_SESSION['authentication_status']) && $_SESSION['authentication_status'] && $_SERVER["REQUEST_METHOD"] == "POST") {
-//     echo "hello5678";
-//     $client_name = $_POST['name'];
-//     $client_phno = $_POST['phno'];
-//     $client_email = $_POST['email'];
-//     $client_password = $_POST['confirm_password'];
-//     $client_photo = $_POST['license_photo'];
-
-//     $client_input = "INSERT INTO `client_collection`(`client_name`, `client_phno`, `client_email`, `client_password`, `clinet_license`) 
-//     VALUES ($client_name,'$client_phno''$client_email','$client_password','$client_photo')";
-//     if (mysqli_query($con, $client_input)) {
-//         echo "<script>alert('You have been signed up. Please login.'); 
-//         window.location = '../index.php#login-form'</script>";
-//     }
-//     else{
-//         echo "<script>alert('Invddddddddddalid OTP. Please try again. " . $session_email . " '); 
-//         window.location = '../index.php#sign-form'</script>";
-//     }
-   
-// }
 ?>

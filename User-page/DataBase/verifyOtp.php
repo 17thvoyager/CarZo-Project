@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['otp'])) {
         if (mysqli_query($con, $client_input)) {
         echo "<script>alert('You have been signed up. Please login.'); 
         window.location = '../index.php#login-form'</script>";
+        session_destroy();
     }
     } else {
         echo "<script>alert('Invalid OTP. Please try again. " . $session_email . " '); 

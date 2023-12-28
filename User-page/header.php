@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include('DataBase/user-config.php');
 session_start();
 $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
@@ -14,8 +16,8 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                 <!-- ***** Menu Start ***** -->
                 <ul class="nav">
                     <?php
+                        if(isset($_SESSION['user_name'])){
                         $client_name = $_SESSION['user_name'];
-                        if(isset($client_name)){
                     ?>
                     <li><a href="">WELCOME <?php echo $client_name ?></a></li>
                     <?php } ?>  
@@ -40,8 +42,8 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                     <li><a href="contact.php">Contact</a></li>
 
                     <?php
+                        if(isset($_SESSION['user_name'])){
                         $client_id = $_SESSION['user_name'];
-                        if(isset($client_id)){
                     ?>
                     <li><a href="./DataBase/logOutAction.php">Log out</a></li>
                     <?php }else{ ?>
