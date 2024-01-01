@@ -132,7 +132,7 @@
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h2><em>Rent a car</em> at low prices</h2>
                 <div class="main-button">
-                    <a href="contact.html">Contact Us</a>
+                    <a href="contact.php">Contact Us</a>
                 </div>
             </div>
         </div>

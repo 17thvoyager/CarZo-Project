@@ -19,14 +19,15 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                         if(isset($_SESSION['user_name'])){
                         $client_name = $_SESSION['user_name'];
                     ?>
-                    <li><a href="">WELCOME <?php echo $client_name ?></a></li>
+                    <li><a href="userOrders.php">WELCOME <?php echo $client_name ?></a></li>
                     <?php } ?>  
                     <li ><a href="index.php"<?php if($current_page === 'index')
                         echo 'class="active"'; ?>>Home</a></li>
                         
                     <li><a href="fleet.php"<?php if($current_page ==='fleet') echo 'class="active"'; ?>>Fleet</a></li>
                     <li><a href="offers.php"<?php if($current_page ==='offers') echo 'class="active"'; ?>>Offers</a></li>
-                    <li class="dropdown">
+                    <li><a href="about.php"<?php if($current_page ==='about') echo 'class="active"'; ?>>About Us</a></li>
+                    <!-- <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">About</a>
 
@@ -38,7 +39,7 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                             <a class="dropdown-item" href="faq.html">FAQ</a>
                             <a class="dropdown-item" href="terms.html">Terms</a>
                         </div>
-                    </li>
+                    </li> -->
                     <li><a href="contact.php">Contact</a></li>
 
                     <?php

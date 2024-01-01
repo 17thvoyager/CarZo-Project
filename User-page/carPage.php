@@ -125,8 +125,7 @@ include("./DataBase/user-config.php");
     if (isset($_SESSION['user_name'])) {
         $carID = $_GET['carID'];
 
-        $query = "SELECT `car_model`, `lease_price`,`car_model`,`kilometer`, `car_image`, `car_passengers`, `car_luggage`, `car_doors`, `car_transmission`, `car_describtion` 
-            FROM `car_collection` WHERE `car_id` = $carID ";
+        $query = "SELECT * FROM `car_collection` WHERE `car_id` = $carID ";
         if (mysqli_query($con, $query)) {
             $res = mysqli_query($con, $query);
             $car_row = mysqli_fetch_array($res);
@@ -169,7 +168,7 @@ include("./DataBase/user-config.php");
                     <!-- Car Description -->
                     <h4>Description:</h4>
                     <p>
-                        <?php echo $car_row['car_describtion']; ?>
+                        <?php echo $car_row['car_description']; ?>
                     </p>
                     
 
@@ -201,10 +200,9 @@ include("./DataBase/user-config.php");
 
                     <!-- Button trigger modal -->
                     <div style="margin-top: 15px;">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-danger" data-toggle="modal"  data-target="#exampleModal">
                             Rent Now
                         </button>
-
                     </div>
                     <!-- Modal -->
                     <!-- ... Previous modal code ... -->
@@ -212,6 +210,10 @@ include("./DataBase/user-config.php");
                 </div>
 
                 <!-- Modal -->
+                <?php
+                // if ($_SESSION['client_ordered'] ?? false === false) {
+                    if($_SESSION['client_ordered'] == false) {
+                ?>
 
                 <form action="./DataBase/clientReservation.php?carID=<?php echo $carID?>" method="post">  
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -289,11 +291,13 @@ include("./DataBase/user-config.php");
                                 <div class="modal-body" style="color: black;">
                                     <h4 class="text-uppercase font-weight-bold" style="font-size: 24px; color: #ed563b;">Payment Details</h4>
                                     <div class="border-top my-3"></div>
-                                    <p class="h5">Amount: <input type="text" name="paymentAmount" id="paymentAmount" class="text-success font-weight-bold h2 border-0" readonly/></p>
+                                    <p class="h5">Amount: INR<input type="text" name="paymentAmount" id="paymentAmount" class="text-success font-weight-bold h2 border-0" readonly/></p>
 
                                 <!-- Include Mileage Option -->
                                 <!-- <p>Mileage Option: <span id="mileageOptionText"></span id="mileageOptionText"></span></p>     -->
-                                <p>Mileage Option> <input type="text" id="mileageOptionText" name="mileageOptionText" class="border-0" raedonly/></p>
+                                <p>Mileage Option:
+                                    <input type="text" id="mileageOptionText" name="mileageOptionText" class="border-0" raedonly/>
+                                    <input type="hidden" name="userMileageOption" id="userMileageOption" value=""></p>
                                 <h4>Car Details</h4>
                                 <p>
                                     <strong>Model:</strong> <span id="carModel"></span><br>
@@ -313,13 +317,17 @@ include("./DataBase/user-config.php");
                                 <!-- <button type="submit" class="btn btn-primary" id="purchaseButton"
                                     style="background-color: #ed563b; color: white;">Purchase</button> -->
                                     <input type="submit" class="btn btn-primary" id="purchaseButton" style="background-color: #ed563b; color: white;" value="Purchase">
-
                             </div>
                         </div>
                     </div>
                 </div>
 
                 </form>
+                <?php
+                    } else {
+                        echo "<script>alert('You are already booked! If you want to book again cancel the current order or complete your reservation.');window.location = './userOrders.php'</script>";
+                    }
+                ?>
             <script>
                 
                 // document.addEventListener('DOMContentLoaded', function () {
@@ -353,7 +361,7 @@ include("./DataBase/user-config.php");
                                     var leasePricePerKm = <?php echo $car_row['lease_price']; ?>;
                                     var totalLeasePrice = mileageOption * leasePricePerKm;
 
-                                    document.getElementById('paymentAmount').value = 'INR ' + totalLeasePrice.toFixed(2);
+                                    document.getElementById('paymentAmount').value =  totalLeasePrice.toFixed(2);
 
                                     document.getElementById('carModel').textContent = '<?php echo $car_row['car_model']; ?>';
 
@@ -364,6 +372,7 @@ include("./DataBase/user-config.php");
 
                                     document.getElementById('qrCodeImage').src = qrCodeUrl;
                                     var selectedMileageOption = document.getElementById('mileageOption').value;
+                                    document.getElementById('userMileageOption').value = selectedMileageOption;
                                     document.getElementById('mileageOptionText').value = selectedMileageOption + ' km';
                                     $('#qrCodeModal').modal('show');
                                 } else {
