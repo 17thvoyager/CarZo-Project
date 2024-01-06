@@ -7,6 +7,7 @@ session_start();
 echo "<script>console.log('this is dfghjka Variable' );</script>";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['otp'])) {
+
     $user_entered_otp = $_POST["otp"];
     $session_name = $_SESSION['name'];
     $session_phno =  $_SESSION['phno'];

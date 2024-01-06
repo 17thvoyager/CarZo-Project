@@ -18,7 +18,7 @@ include('Database/config.php');
       content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
     />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <title>Matrix Admin Lite Free Versions  WrapPixel</title>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -364,23 +364,6 @@ include('Database/config.php');
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tables</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -415,11 +398,8 @@ include('Database/config.php');
                           <th>Car model</th>
                           <th>Lease price</th>
                           <th>Client ID</th>
-                          <th>Driver ID</th>
                           <th>Rented Date</th>
                           <th>Total Mileage</th>
-                          <th>Contact Customer</th>
-                          <th>Customer Email</th>
                           <th>Car Details</th>
                           <th>Invigilator</th>
                           <th>Status</th>
@@ -440,17 +420,10 @@ include('Database/config.php');
                           <td><?php echo $row['car_model'] ?></td>
                           <td><?php echo $row['lease_price'] ?></td>
                           <td><?php echo $row['client_id'] ?></td>
-                          <td><?php echo $row['driver_id'] ?></td>
                           <td><?php echo $row['rented_date'] ?>
                             </td>
                             <td>
                               <?php echo $row['kilometer'] ?>
-                            </td>
-                            <td>
-                              <?php echo $row['client_phno'] ?>
-                            </td>
-                            <td>
-                              <?php echo $row['client_email'] ?>
                             </td>
                             <td>
                               <?php echo $row['car_details'] ?>
@@ -497,11 +470,8 @@ include('Database/config.php');
                           <th>Car model</th>
                           <th>Lease price</th>
                           <th>Client ID</th>
-                          <th>Driver ID</th>
                           <th>Rented Date</th>
                           <th>Total Mileage</th>
-                          <th>Contact Customer</th>
-                          <th>Customer Email</th>
                           <th>Car Details</th>
                           <th>Invigilator</th>
                           <th>Status</th>

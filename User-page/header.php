@@ -27,6 +27,7 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                     <li><a href="fleet.php"<?php if($current_page ==='fleet') echo 'class="active"'; ?>>Fleet</a></li>
                     <li><a href="offers.php"<?php if($current_page ==='offers') echo 'class="active"'; ?>>Offers</a></li>
                     <li><a href="about.php"<?php if($current_page ==='about') echo 'class="active"'; ?>>About Us</a></li>
+                    <li><a href="contact.php"<?php if($current_page ==='contact') echo 'class="active"'; ?>>Contact</a></li>
                     <!-- <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">About</a>
@@ -40,7 +41,7 @@ $current_page = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
                             <a class="dropdown-item" href="terms.html">Terms</a>
                         </div>
                     </li> -->
-                    <li><a href="contact.php">Contact</a></li>
+                    
 
                     <?php
                         if(isset($_SESSION['user_name'])){

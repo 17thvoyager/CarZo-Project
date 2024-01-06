@@ -19,7 +19,7 @@ include("DataBase/user-config.php");
         href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
         rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Car Rental Website Template</title>
+    <title>CarZo.com</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
@@ -82,6 +82,7 @@ include("DataBase/user-config.php");
 
                 if ($res) {
                     while ($row = mysqli_fetch_array($res)) {
+                        if('Garaged' == $row['car_status']) {
                         $carID = $row['car_id'];
                         $carModel = $row['car_model'];
                         $leasePrice = $row['lease_price'];
@@ -98,8 +99,8 @@ include("DataBase/user-config.php");
                                     <img src="assets/images/<?php echo $carImage; ?>" alt="Car Image">
                                 </div>
                                 <div class="down-content">
-                                    <span>from <sup>$</sup>
-                                        <?php echo $leasePrice; ?> per weekend
+                                    <span>from  <sup> INR</sup>
+                                        <?php echo $leasePrice; ?> per km
                                     </span>
                                     <h4>
                                         <?php echo $carModel; ?>
@@ -126,6 +127,7 @@ include("DataBase/user-config.php");
                             </div>
                         </div>
                     <?php }
+                    }
                 } else {
                     echo "<script>alert('problem in the query');</script>";
                 }
@@ -165,8 +167,8 @@ include("DataBase/user-config.php");
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        Copyright © 2020 Company Name
-                        - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        © 2023 CarZo Car Rental
+                        - : <a href="https://www.CarZo.com/">CarZo.com</a>
                     </p>
                 </div>
             </div>

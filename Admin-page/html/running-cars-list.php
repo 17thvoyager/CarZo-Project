@@ -367,23 +367,6 @@ include('Database/config.php');
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Tables</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -414,12 +397,10 @@ include('Database/config.php');
                         <tr>
                           <th>Car ID</th>
                           <th>Client ID</th>
-                          <th>Driver ID</th>
-                          <th>Driver ID</th>
                           <th>Client Number</th>
-                          <th>Kilometer</th>
+                          <th>Client package</th>
                           <th>Rendted Date</th>
-                          <th>Details</th>
+                          <th>Drop Data/Time</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -427,41 +408,44 @@ include('Database/config.php');
                           $sql = "SELECT * FROM `car_collection` ";
                           $res = mysqli_query($con, $sql);
                           
-                          while( $row = mysqli_fetch_array($res)){
+                          while( $car_row = mysqli_fetch_array($res) ){
+                            if('Running' == $car_row['car_status']) {
+                              $sql2 = "SELECT * FROM `client_collection` WHERE `client_id`='" . $car_row['client_id'] . "'";
+                              $res2 = mysqli_query($con, $sql2);
+                              $client_row = mysqli_fetch_array($res2);
                         ?>
                         <tr>
-                          <td><?php echo $row['car_id'] ?></td>
-                          <td><?php echo $row['client_id'] ?></td>
-                          <td><?php echo $row['driver_id'] ?></td>
-                          <td><?php echo $row['client_phno'] ?></td>
-                          <td><?php echo $row['kilometer'] ?></td>
-                          <td><?php echo $row['rented_date'] ?></td>
-                          <td><?php echo $row['car_details'] ?></td>
+                          <td><?php echo $car_row['car_id'] ?></td>
+                          <td><?php echo $car_row['client_id'] ?></td>
+                          <td><?php echo $client_row['client_phno'] ?></td>
+                          <td><?php echo $client_row['client_package'] ?></td>
+                          <td><?php echo $car_row['rented_date'] ?></td>
+                          <td><?php echo $client_row['client_dropoff'] ?></td>
                           <td>
                           <div class="container">
                             <div class="row">
                               <div class="col">
                                 <div class="d-flex justify-content-between">
-                                  <a href="Database/delete-runig.php?car_id=<?php echo $row['car_id']; ?>" class="btn btn-danger ">Delete</a>
-                                  <a href="DataBase/running-edit.php?car_id=<?php echo $row['car_id']; ?>" class="btn btn-primary">Edit</a>
+                                  <a href="Database/delete-runig.php?car_id=<?php echo $car_row['car_id']; ?>" class="btn btn-danger ">Delete</a>
                                 </div>
                               </div>
                             </div>
                           </div>
                           </td>
                         </tr>
-                          <?php } ?>
+                          <?php
+                            }
+                         } 
+                         ?>
                       </tbody>
                       <tfoot>
                         <tr>
                           <th>Car ID</th>
                           <th>Client ID</th>
-                          <th>Driver ID</th>
-                          <th>Driver ID</th>
                           <th>Client Number</th>
-                          <th>Kilometer</th>
+                          <th>Client package</th>
                           <th>Rendted Date</th>
-                          <th>Details</th>
+                          <th>Drop Data/Time</th>
                         </tr>
                       </tfoot>
                     </table>

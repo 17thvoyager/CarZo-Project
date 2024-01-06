@@ -71,9 +71,8 @@ $admin_name = $_SESSION['admin_name'];
               class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="arrived-cars-list.php"
-            aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Arrived cars
-              List</span></a>
+          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="client-list.php"
+            aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Client List</span></a>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link waves-effect waves-dark sidebar-link" href="running-cars-list.php"

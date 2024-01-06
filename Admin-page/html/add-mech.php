@@ -1,4 +1,4 @@
-<?php  session_start(); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -15,7 +15,7 @@
       content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
     />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <title>Matrix Admin Lite Free Versions  WrapPixel</title>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -372,23 +372,6 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title"> Add Current Running Car</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -402,109 +385,53 @@
           <div class="row">
             <div class="col-xl-12 col-md-10">
               <div class="card">
-                <form class="form-horizontal" action="DataBase/currentaction.php" method="POST">
+                <form class="form-horizontal" action="DataBase/registraction.php" method="POST">
                   <div class="card-body ">
                     <h4 class="card-title">Car Inputs</h4>
                     <div class="form-group row">
                       <label
-                        for="car-id"
+                        for="mech-id"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >CarID</label
+                        >Invigilator ID</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="text"
                           class="form-control"
-                          name="car-id"
-                          placeholder="CarID"
+                          name="mech-id"
+                          placeholder="MechID"
                         />
                       </div>
                     </div>
+                    </div>
+                    <div class="form-group row">̀
+                      <label
+                        for="invigilator-name"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Invigilator Name</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="invigilator-Name"
+                          placeholder="Name"
+                        />
+                      </div>
+                  </div>
                     <div class="form-group row">
                       <label
-                        for="client-id"
+                        for="mech-phno"
                         class="col-sm-3 text-end control-label col-form-label"
-                        > Client ID</label
+                        >Phone o:</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="number"
                           class="form-control"
-                          name="client-id"
-                          placeholder="ClientID"
+                          name="mech-phno"
+                          placeholder="phno"
                         />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="driver-id"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        > Driver ID</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="driver-id"
-                          placeholder="ClientID"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label
-                        for="client-phno"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Client Phone no: </label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="client-phno"
-                          placeholder="distance in km"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="km"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Total milage</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="km"
-                          placeholder="Contact No Here"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="rented-date"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Rented Date</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="date"
-                          class="form-control"
-                          name="rented-date"
-                          placeholder="Car last service"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label
-                        for="car-details"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Car details</label
-                      >
-                      <div class="col-sm-9">
-                        <textarea class="form-control" name="car-details"></textarea>
                       </div>
                     </div>
                   <div class="border-top">
@@ -517,22 +444,6 @@
             </div>
           </div>
           <!-- editor -->
-          <div class="row">
-            <div class="col-xl-12 col-md-10">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Detailedx</h4>
-                  <!-- Create the editor container -->
-                  <div id="editor" style="height: 300px">
-                    <p>Hello World!</p>
-                    <p>Some initial <strong>bold</strong> text</p>
-                    <p>
-                      <br />
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- ============================================================== -->
           <!-- End PAge Content -->
@@ -551,6 +462,7 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
+
 
         <!-- ============================================================== -->
         <!-- End footer -->

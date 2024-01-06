@@ -510,39 +510,6 @@
                     </div>
                     <div class="form-group row">
                       <label
-                        for="contact-number"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Contact No</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="contact-number"
-                          placeholder="Contact Number Here"
-                          value="<?php echo trim($client_phno); ?>"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label
-                        for="driver-id"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Last Driver ID</label>
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="dirver-control"
-                          name="driver-id"
-                          placeholder=""
-                          value="<?php echo trim($driver_id); ?>"
-                        />
-                      </div>
-                    </div>
-                  
-                    <div class="form-group row">
-                      <label
                         for="car-details"
                         class="col-sm-3 text-end control-label col-form-label"
                         >Car insurance and repair details</label
@@ -576,26 +543,7 @@
                 <?php } ?>
               </div>
             </div>
-          </div>
-          <!-- editor -->
-          <div class="row">
-            <div class="col-xl-12 col-md-10">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Detailedx</h4>
-                  <!-- Create the editor container -->
-                  <div id="editor" style="height: 300px">
-                    <p>Hello World!</p>
-                    <p>Some initial <strong>bold</strong> text</p>
-                    <p>
-                      <br />
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ============================================================== -->
+          </div>          <!-- ============================================================== -->
           <!-- End PAge Content -->
           <!-- ============================================================== -->
           <!-- ============================================================== -->

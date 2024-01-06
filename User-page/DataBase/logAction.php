@@ -49,7 +49,12 @@ function verifyAdmin($client_email, $client_password, $con) {
     }
 }
 
-if (isset($_POST['submit'])) {
+if($_SESSION['user_id'] == true) {
+    echo "<script>alert('The " . $_SESSION['user_name'] . " has been signed up. Please Log out first.'); 
+    window.location = '../index.php#login-form'</script>";
+
+}
+elseif (isset($_POST['submit'])) {
     $client_email = $_POST['login_email'];
     $client_password = $_POST['login_password'];
 

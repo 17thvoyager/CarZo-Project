@@ -18,7 +18,7 @@ include('Database/config.php');
       content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
     />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <title>Matrix Admin Lite Free Versions  WrapPixel</title>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -409,62 +409,51 @@ include('Database/config.php');
                     >
                       <thead>
                         <tr>
-                          <th>Car ID</th>
-                          <th>Arrived Date</th>
-                          <th>Last Service</th>
                           <th>Client ID</th>
-                          <th>Total Mileage</th>
-                          <th>Contact Customer</th>
-                          <th>Driver ID</th>
-                          <th>Details</th>
-                          <th>Invigilator</th>
-                          <th>Edit</th>
+                          <th>Client Name</th>
+                          <th>Client Phno:</th>
+                          <th>Client Email</th>
+                          <th>Res car ID</th>
+                          <th>Pick up Date</th>
+                          <th>Drop off Date</th>
+                          <th>Kilometer Package</th>
+                          <th>Lease Price</th>
+                          <th>Location</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
-                          $sql = "SELECT * FROM `car_collection` ";
+                          $sql = "SELECT * FROM `client_collection` ";
                           $res = mysqli_query($con, $sql);
                           while( $row = mysqli_fetch_array($res)){
                         ?>
                         <tr>
-                          <td><?php echo $row['car_id'] ?></td>
-                          <td><?php echo $row['arrived_date'] ?></td>
-                          <td><?php echo $row['last_service_date'] ?></td>
                           <td><?php echo $row['client_id'] ?></td>
-                          <td><?php echo $row['kilometer'] ?></td>
+                          <td><?php echo $row['client_name'] ?></td>
                           <td><?php echo $row['client_phno'] ?></td>
-                          <td><?php echo $row['driver_id'] ?></td>
-                          <td><?php echo $row['car_details'] ?></td>
-                          <td><?php echo $row['invigilator_name'] ?></td>
-                          <td>
-                          <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                <div class="d-flex justify-content-between">
-                                  <a href="Database/delete-arr.php?car_id=<?php echo $row['car_id']; ?>" class="btn btn-danger">Delete</a>
-                                  <a class="btn btn-primary"
-                                      href="arrived-edit.php?car_id=<?php echo $row['car_id']; ?>">Edit</a>
-                                  </div>
-                                  </div>
-                                  </div>
-                                        </div>
-                                  </td>
-                                </tr>
+                          <td><?php echo $row['client_email'] ?></td>
+                          <td><?php echo $row['car_id'] ?></td>
+                          <td><?php echo $row['client_pickup'] ?></td>
+                          <td><?php echo $row['client_dropoff'] ?></td>
+                          <td><?php echo $row['client_package'] ?></td>
+                          <td><?php echo $row['client_leaseprice'] ?></td>
+                          <td><?php echo $row['client_location'] ?></td>
+                          </tr>
+                        </div>
                           <?php } ?>  
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>Car ID</th>
-                          <th>Arrived Date</th>
-                          <th>Last Service</th>
-                          <th>Client ID</th>
-                          <th>Total Mileage</th>
-                          <th>Contact Customer</th>
-                          <th>Driver ID</th>
-                          <th>Details</th>
-                          <th>Invigilator</th>
-                          <th>Edit</th>
+                        <th>Client ID</th>
+                          <th>Client Name</th>
+                          <th>Client Phno:</th>
+                          <th>Client Email</th>
+                          <th>Res car ID</th>
+                          <th>Pick up Date</th>
+                          <th>Drop off Date</th>
+                          <th>Kilometer Package</th>
+                          <th>Lease Price</th>
+                          <th>Location</th>
                         </tr>
                       </tfoot>
                     </table>

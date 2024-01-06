@@ -25,9 +25,10 @@ include("DataBase/user-config.php");
     ?>
 
     <style>
-         body {
+        body {
+        margin-top: 200px;
         background-color: #f8f9fa;
-        padding-bottom: 100px;
+        padding-bottom: 150px;
     }
 
     .container2, .container3 {
@@ -85,14 +86,19 @@ include("DataBase/user-config.php");
     $query1 = "SELECT * FROM `car_collection` WHERE `client_id`='$client_id'";
     $result1 = mysqli_query($con, $query1);
     
-    $query2 = "SELECT * FROM `client_collection` WHERE `client_id`='$client_id'";
+    $query2 = "SELECT * FROM `cart_collection` WHERE `client_id`='$client_id'";
     $result2 = mysqli_query($con, $query2);
 
     if($result1 && $result2) {
         $car_row = mysqli_fetch_array($result1);
-        $client_row = mysqli_fetch_array($result2);
-
-        if($car_row && $client_row) {
+        $cart_row = mysqli_fetch_array($result2);
+        
+        
+        // if(!isset($_SESSION['client_ordered']) && $_SESSION['client_ordered'] == true) {      
+            if($car_row && $cart_row) {
+                if($car_row['car_status'] == 'Running') {
+                echo "<script>console.log('the query is set: " . $client_id . "');</script>";
+                
     ?>
 
 <div class="container2"> 
@@ -102,30 +108,32 @@ include("DataBase/user-config.php");
         <div class="card-body car-details">
             <h5 class="card-title"><?php echo $car_row['car_model']; ?></h5>
             <p class="card-text">Details: <strong><?php echo $car_row['car_description'];?></strong></p>
-            <p class="card-text">Package:  <strong><?php  echo $client_row['client_package'];?></strong></p>
-            <p class="card-text">Payed Price:  <strong><?php  echo $client_row['client_leaseprice'];?></strong></p>
-            <p class="card-text">Reserved Location:  <strong><?php  echo $client_row['client_location'];?></strong></p>
-            <p class="card-text">Pick-up Date:  <strong><?php  echo $client_row['client_pickup'];?></strong></p>
-            <p class="card-text">Drop-off Date:  <strong><?php echo $client_row['client_dropoff'];?></strong></p>
+            <p class="card-text">Package:  <strong><?php  echo $cart_row['client_package'];?></strong></p>
+            <p class="card-text">Payed Price:  <strong><?php  echo $cart_row['client_leaseprice'];?></strong></p>
+            <p class="card-text">Reserved Location:  <strong><?php  echo $cart_row['client_location'];?></strong></p>
+            <p class="card-text">Pick-up Date:  <strong><?php  echo $cart_row['client_pickup'];?></strong></p>
+            <p class="card-text">Drop-off Date:  <strong><?php echo $cart_row['client_dropoff'];?></strong></p>
 
             <div class="buttons-container d-flex justify-content-end">
-                <a href="./DataBase/cancelOrder.php"><button class="btn btn-danger" onclick="confirmCancellation()">Cancel Order</button></a>
+            <button class="btn btn-danger" onclick="confirmCancellation(<?php echo $client_id; ?>)">Cancel Order</button>
             </div>
         </div>
     </div>
-</div>
-<!-- <script>
+</div>  
+<script>
 function confirmCancellation() {
     var isConfirmed = confirm("Are you sure you want to cancel the order?");
 
     if (isConfirmed) {
-        window.location.href = "./DataBase/cancelOrder.php";
+        window.location.href = "./DataBase/cancelOrder.php?client_id=<?php echo $client_id; ?>";
     }
 }
-</script> -->
+</script>
 
     <?php
-    } else {
+            }  
+    }
+    else {
     ?>
      <div class="container3">
         <h3>You don't have any reservations</h3>
@@ -138,7 +146,7 @@ function confirmCancellation() {
 
     <?php
        }
-    }   
+    }
     ?>
     <footer>
         <p>&copy; 2023 CarZo Car Rental | <a href="mailto:support@carzo.in">support@carzo.in</a></p>

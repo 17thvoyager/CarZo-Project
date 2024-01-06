@@ -15,7 +15,7 @@
       content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework"
     />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <title>Matrix Admin Lite Free Versions  WrapPixel</title>
     <!-- Favicon icon -->
     <link
       rel="icon"
@@ -372,23 +372,6 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title"> Add car</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -450,20 +433,6 @@
                         />
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label
-                        for="driver-id"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Last Client ID</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="driver-id"
-                          placeholder="DriverID"
-                        />
-                      </div>
                     </div>
                     <div class="form-group row">
                       <label
@@ -482,36 +451,19 @@
                     </div>
                     <div class="form-group row">
                       <label
-                        for="contact-number"
+                        for="lease-price"
                         class="col-sm-3 text-end control-label col-form-label"
-                        >Contact No</label
+                        >Lease Price</label
                       >
                       <div class="col-sm-9">
                         <input
                           type="number"
                           class="form-control"
-                          name="contact-number"
-                          placeholder="Contact Number Here"
+                          name="lease-price"
+                          placeholder="current lease price of the car"
                         />
                       </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label
-                        for="contact-email"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Last Driver ID</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="email"
-                          class="form-control"
-                          name="contact-email"
-                          placeholder="Enter Email Here"
-                        />
-                      </div>
-                    </div>
-                  
+                    </div>                  
                     <div class="form-group row">
                       <label
                         for="car-details"
@@ -547,22 +499,6 @@
             </div>
           </div>
           <!-- editor -->
-          <div class="row">
-            <div class="col-xl-12 col-md-10">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Detailedx</h4>
-                  <!-- Create the editor container -->
-                  <div id="editor" style="height: 300px">
-                    <p>Hello World!</p>
-                    <p>Some initial <strong>bold</strong> text</p>
-                    <p>
-                      <br />
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- ============================================================== -->
           <!-- End PAge Content -->

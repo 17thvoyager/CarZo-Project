@@ -212,7 +212,13 @@ include("./DataBase/user-config.php");
                 <!-- Modal -->
                 <?php
                 // if ($_SESSION['client_ordered'] ?? false === false) {
-                    if($_SESSION['client_ordered'] == false) {
+                    try{
+                        $client_id = $_SESSION['user_id'];
+                        $query2 = "SELECT * FROM `cart_collection` WHERE `client_id` = '$client_id'";
+                        $result2 = mysqli_query($con, $query2);
+                        $cart_row = mysqli_fetch_array($result2);
+                        if($cart_row == false) {
+                            if(!isset($_SESSION['client_ordered']) || $_SESSION['client_ordered'] == false) {
                 ?>
 
                 <form action="./DataBase/clientReservation.php?carID=<?php echo $carID?>" method="post">  
@@ -324,9 +330,15 @@ include("./DataBase/user-config.php");
 
                 </form>
                 <?php
-                    } else {
+                    }else{
                         echo "<script>alert('You are already booked! If you want to book again cancel the current order or complete your reservation.');window.location = './userOrders.php'</script>";
                     }
+                } else {
+                    echo "<script>alert('You are already booked! If you want to book again cancel the current order or complete your reservation.');window.location = './userOrders.php'</script>";
+                }
+                 }  catch(Throwable $e) {
+                    error_log('Caught exception: ' . $e->getMessage());
+                 }
                 ?>
             <script>
                 
