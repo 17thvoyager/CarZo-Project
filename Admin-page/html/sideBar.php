@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 include('./DataBase/config.php');
 $admin_name = $_SESSION['admin_name'];
 ?>
@@ -80,21 +79,25 @@ $admin_name = $_SESSION['admin_name'];
               List</span></a>
         </li>
         <li class="sidebar-item">
+          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="mech-list.php"
+            aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Invigilators
+              List</span></a>
+        </li>
+        <li class="sidebar-item">
           <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
               class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
           <ul aria-expanded="false" class="collapse first-level">
             <li class="sidebar-item">
               <a href="add-car.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">
-                  Add Car </span></a>
+                  Add New Car </span></a>
             </li>
             <li class="sidebar-item">
-              <a href="current-runig.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span
-                  class="hide-menu"> Add Current Running Car </span></a>
+              <a href="update-car.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">
+                  Update Car </span></a>
             </li>
-
             <li class="sidebar-item">
-              <a href="form-wizard.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">
-                  Form Wizard </span></a>
+              <a href="add-mech.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span
+                  class="hide-menu"> Add Invigilator </span></a>
             </li>
           </ul>
         </li>

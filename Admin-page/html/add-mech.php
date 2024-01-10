@@ -385,61 +385,71 @@
           <div class="row">
             <div class="col-xl-12 col-md-10">
               <div class="card">
-                <form class="form-horizontal" action="DataBase/registraction.php" method="POST">
-                  <div class="card-body ">
-                    <h4 class="card-title">Car Inputs</h4>
-                    <div class="form-group row">
-                      <label
-                        for="mech-id"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Invigilator ID</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="mech-id"
-                          placeholder="MechID"
-                        />
-                      </div>
-                    </div>
-                    </div>
-                    <div class="form-group row">̀
-                      <label
-                        for="invigilator-name"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Invigilator Name</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="invigilator-Name"
-                          placeholder="Name"
-                        />
-                      </div>
-                  </div>
-                    <div class="form-group row">
-                      <label
-                        for="mech-phno"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Phone o:</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="mech-phno"
-                          placeholder="phno"
-                        />
-                      </div>
-                    </div>
-                  <div class="border-top">
+              <form class="form-horizontal" action="DataBase/mech-registraction.php" method="POST">
                     <div class="card-body">
-                      <input type="submit" class="btn btn-primary"  value="submit" name="submit" > 
+                        <h4 class="card-title">Car Inputs</h4>
                     </div>
-                  </div>
+
+                    <div class="form-group row">
+                        <label for="invigilator-name" class="col-sm-3 text-end control-label col-form-label">Mechanic Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="mech-name" placeholder="Name" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="mech-phno" class="col-sm-3 text-end control-label col-form-label">PhoneNo:</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    name="mech-phno"
+                                    placeholder="Enter 10-digit phone number"
+                                    pattern="[0-9]{10}"
+                                    title="Please enter a 10-digit phone number"
+                                    required
+                                />
+                                <div class="input-group-append">
+                                    <span class="input-group-text">📞</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="mech-address" class="col-sm-3 text-end control-label col-form-label">Address:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="mech-address" placeholder="Enter Mechanic's Address" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+                        </div>
+                    </div>
                 </form>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            var phoneNumberInput = document.querySelector('input[name="mech-phno"]');
+                            
+                            phoneNumberInput.addEventListener("input", function () {
+                                var cleanedPhoneNumber = this.value.replace(/\D/g, '');
+                                cleanedPhoneNumber = cleanedPhoneNumber.slice(0, 10);
+                                this.value = cleanedPhoneNumber;
+                            });
+
+                            phoneNumberInput.addEventListener("keypress", function (event) {
+                                var keyCode = event.keyCode;
+                                if (keyCode !== 8 && keyCode !== 46 && (keyCode < 48 || keyCode > 57)) {
+                                    event.preventDefault();
+                                }
+                            });
+                        });
+                    </script>
+
               </div>
             </div>
           </div>

@@ -13,10 +13,11 @@ include('user-config.php');
 if(isset($_GET['client_id'])) {
     $client_id = $_GET['client_id'];
 
-    $query1 = "UPDATE `car_collection` SET `car_status`='Garaged', `rented_date`=NULL  WHERE `client_id`= '$client_id' ";
+    $query1 = "UPDATE `car_collection` SET `car_status`='Garaged', `rented_date`=NULL,`client_id` = NULL  WHERE `client_id`= '$client_id' ";
     
     $query2 = "UPDATE `client_collection` SET
     `car_id` = NULL,
+
     `client_pickup` = NULL,
     `client_dropoff` = NULL,
     `client_package` = NULL,

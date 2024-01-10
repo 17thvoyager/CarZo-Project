@@ -385,116 +385,78 @@
           <div class="row">
             <div class="col-xl-12 col-md-10">
               <div class="card">
-                <form class="form-horizontal" action="DataBase/registraction.php" method="POST">
-                  <div class="card-body ">
-                    <h4 class="card-title">Car Inputs</h4>
-                    <div class="form-group row">
-                      <label
-                        for="car-id"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >CarID</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="car-id"
-                          placeholder="CarID"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="arrived-date"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Car arrived date</label>
-                      <div class="col-sm-9">
-                        <input
-                          type="date"
-                          class="form-control"
-                          name="arrived-date"
-                          placeholder="Car last service"
-                        />  
-                      </div>
-                    </div>
+              <form class="form-horizontal" action="DataBase/mech-registraction.php" method="POST" enctype="multipart/form-data">
+    <div class="card-body">
+        <h4 class="card-title">Car Inputs</h4>
+    </div>
 
-                    <div class="form-group row">
-                      <label
-                        for="service-date"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Car last service</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="date"
-                          class="form-control"
-                          name="service-date"
-                          placeholder="Car last service"
-                        />
-                      </div>
-                    </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="km"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >km</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="km"
-                          placeholder="distance in km"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label
-                        for="lease-price"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Lease Price</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="number"
-                          class="form-control"
-                          name="lease-price"
-                          placeholder="current lease price of the car"
-                        />
-                      </div>
-                    </div>                  
-                    <div class="form-group row">
-                      <label
-                        for="car-details"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Car insurance and repair details</label
-                      >
-                      <div class="col-sm-9">
-                        <textarea class="form-control" name="car-details"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group row">̀
-                      <label
-                        for="invigilator"
-                        class="col-sm-3 text-end control-label col-form-label"
-                        >Invigilator Name</label
-                      >
-                      <div class="col-sm-9">
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="invigilator"
-                          placeholder="Name"
-                        />
-                      </div>
-                  </div>
-                  <div class="border-top">
-                    <div class="card-body">
-                      <input type="submit" class="btn btn-primary"  value="submit" name="submit" > 
-                    </div>
-                  </div>
-                </form>
+    <div class="form-group row">
+        <label for="car-model" class="col-sm-3 text-end control-label col-form-label">Car Model:</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="car-model" placeholder="Model" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="lease-price" class="col-sm-3 text-end control-label col-form-label">Lease Price:</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="lease-price" placeholder="Price" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-image" class="col-sm-3 text-end control-label col-form-label">Car Image:</label>
+        <div class="col-sm-9">
+            <input type="file" class="form-control" name="car-image" accept="image/*" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-passenger" class="col-sm-3 text-end control-label col-form-label">Passenger:</label>
+        <div class="col-sm-9">
+            <input type="number" class="form-control" name="car-passenger" placeholder="Passenger" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-luggage" class="col-sm-3 text-end control-label col-form-label">Luggage:</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="car-luggage" placeholder="Luggage" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-doors" class="col-sm-3 text-end control-label col-form-label">Doors:</label>
+        <div class="col-sm-9">
+            <input type="number" class="form-control" name="car-doors" placeholder="Doors" required />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-transmission" class="col-sm-3 text-end control-label col-form-label">Transmission:</label>
+        <div class="col-sm-9">
+            <select class="form-control" name="car-transmission" required>
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="car-description" class="col-sm-3 text-end control-label col-form-label">Description:</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" name="car-description" placeholder="Description" required></textarea>
+        </div>
+    </div>
+
+    <div class="border-top">
+        <div class="card-body">
+            <input type="submit" class="btn btn-primary" value="Submit" name="submit">
+        </div>
+    </div>
+</form>
+
+
               </div>
             </div>
           </div>

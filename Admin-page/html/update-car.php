@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
   <head>
@@ -23,6 +24,26 @@
       href="../assets/images/favicon.png"
     />
     <!-- Custom CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/libs/select2/dist/css/select2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/libs/jquery-minicolors/jquery.minicolors.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/libs/quill/dist/quill.snow.css"
+    />
     <link href="../dist/css/style.min.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,56 +80,6 @@
       <!-- ============================================================== -->
       <header class="topbar" data-navbarbg="skin5">
         <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-          <div class="navbar-header" data-logobg="skin5">
-            <!-- ============================================================== -->
-            <!-- Logo -->
-            <!-- ============================================================== -->
-            <a class="navbar-brand" href="index.html">
-              <!-- Logo icon -->
-              <b class="logo-icon ps-2">
-                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                <!-- Dark Logo icon -->
-                <img
-                  src="../assets/images/logo-icon.png"
-                  alt="homepage"
-                  class="light-logo"
-                  width="25"
-                />
-              </b>
-              <!--End Logo icon -->
-              <!-- Logo text -->
-              <span class="logo-text ms-2">
-                <!-- dark Logo text -->
-                <img
-                  src="../assets/images/logo-text.png"
-                  alt="homepage"
-                  class="light-logo"
-                />
-              </span>
-              <!-- Logo icon -->
-              <!-- <b class="logo-icon"> -->
-              <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-              <!-- Dark Logo icon -->
-              <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
-              <!-- </b> -->
-              <!--End Logo icon -->
-            </a>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Toggle which is visible on mobile only -->
-            <!-- ============================================================== -->
-            <a
-              class="nav-toggler waves-effect waves-light d-block d-md-none"
-              href="javascript:void(0)"
-              ><i class="ti-menu ti-close"></i
-            ></a>
-          </div>
-          <!-- ============================================================== -->
-          <!-- End Logo -->
-          <!-- ============================================================== -->
           <div
             class="navbar-collapse collapse"
             id="navbarSupportedContent"
@@ -388,9 +359,9 @@
       <!-- ============================================================== -->
       <!-- Left Sidebar - style you can find in sidebar.scss  -->
       <!-- ============================================================== -->
-<?php
-  include_once("sideBar.php");
-  ?>
+     <?php
+     include_once("sideBar.php");
+     ?>
       <!-- ============================================================== -->
       <!-- End Left Sidebar - style you can find in sidebar.scss  -->
       <!-- ============================================================== -->
@@ -401,126 +372,139 @@
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-          <div class="row">
-            <div class="col-12 d-flex no-block align-items-center">
-              <h4 class="page-title">Chat Option</h4>
-              <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Library
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Container fluid  -->
         <!-- ============================================================== -->
-        <div class="container-fluid">
+        <div class="container-fluid justify-content-center align-items-center">
           <!-- ============================================================== -->
           <!-- Start Page Content -->
           <!-- ============================================================== -->
           <div class="row">
-            <div class="col-12">
+            <div class="col-xl-12 col-md-10">
               <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Chat Option</h4>
-                  <div class="chat-box scrollable" style="height: 475px">
-                    <!--chat Row -->
-                    <ul class="chat-list">
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/1.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">James Anderson</h6>
-                          <div class="box bg-light-info">
-                            Lorem Ipsum is simply dummy text of the printing
-                            &amp; type setting industry.
-                          </div>
-                        </div>
-                        <div class="chat-time">10:56 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/2.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">Bianca Doe</h6>
-                          <div class="box bg-light-info">
-                            It’s Great opportunity to work.
-                          </div>
-                        </div>
-                        <div class="chat-time">10:57 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="odd chat-item">
-                        <div class="chat-content">
-                          <div class="box bg-light-inverse">
-                            I would love to join the team.
-                          </div>
-                          <br />
-                        </div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="odd chat-item">
-                        <div class="chat-content">
-                          <div class="box bg-light-inverse">
-                            Whats budget of the new project.
-                          </div>
-                          <br />
-                        </div>
-                        <div class="chat-time">10:59 am</div>
-                      </li>
-                      <!--chat Row -->
-                      <li class="chat-item">
-                        <div class="chat-img">
-                          <img src="../assets/images/users/3.jpg" alt="user" />
-                        </div>
-                        <div class="chat-content">
-                          <h6 class="font-medium">Angelina Rhodes</h6>
-                          <div class="box bg-light-info">
-                            Well we have good budget for the project
-                          </div>
-                        </div>
-                        <div class="chat-time">11:00 am</div>
-                      </li>
-                      <!--chat Row -->
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body border-top">
-                  <div class="row">
-                    <div class="col-9">
-                      <div class="input-field mt-0 mb-0">
-                        <textarea
-                          id="textarea1"
-                          placeholder="Type and enter"
-                          class="form-control border-0"
-                        ></textarea>
+                <form class="form-horizontal" action="DataBase/registraction.php" method="POST">
+                  <div class="card-body ">
+                    <h4 class="card-title">Car Inputs</h4>
+                    <div class="form-group row">
+                      <label
+                        for="car-id"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >CarID</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="car-id"
+                          placeholder="CarID"
+                          required
+                        />
                       </div>
                     </div>
-                    <div class="col-3">
-                      <a
-                        class="btn-circle btn-lg btn-cyan float-end text-white"
-                        href="javascript:void(0)"
-                        ><i class="mdi mdi-send fs-3"></i
-                      ></a>
+                    <div class="form-group row">
+                      <label
+                        for="arrived-date"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Car arrived date</label>
+                      <div class="col-sm-9">
+                        <input
+                          type="date"
+                          class="form-control"
+                          name="arrived-date"
+                          placeholder="Car last service"
+                          required
+                        />  
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label
+                        for="service-date"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Car last service</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="date"
+                          class="form-control"
+                          name="service-date"
+                          placeholder="Car last service"
+                          required
+                        />
+                      </div>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="km"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >km</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="km"
+                          placeholder="distance in km"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label
+                        for="lease-price"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Lease Price</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="lease-price"
+                          placeholder="current lease price of the car"
+                          required
+                        />
+                      </div>
+                    </div>                  
+                    <div class="form-group row">
+                      <label
+                        for="car-details"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Car insurance and repair details</label
+                      >
+                      <div class="col-sm-9">
+                        <textarea class="form-control" name="car-details"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group row">̀
+                      <label
+                        for="invigilator"
+                        class="col-sm-3 text-end control-label col-form-label"
+                        >Invigilator Name</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="invigilator"
+                          placeholder="Name"
+                          required
+                        />
+                      </div>
+                  </div>
+                  <div class="border-top">
+                    <div class="card-body">
+                      <input type="submit" class="btn btn-primary"  value="submit" name="submit" > 
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
+          </div>
+          <!-- editor -->
           </div>
           <!-- ============================================================== -->
           <!-- End PAge Content -->
@@ -539,6 +523,8 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
+
+
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -565,5 +551,57 @@
     <script src="../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../assets/libs/quill/dist/quill.min.js"></script>
+    <script>
+      //***********************************//
+      // For select 2
+      //***********************************//
+      $(".select2").select2();
+
+      /*colorpicker*/
+      $(".demo").each(function () {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+          control: $(this).attr("data-control") || "hue",
+          position: $(this).attr("data-position") || "bottom left",
+
+          change: function (value, opacity) {
+            if (!value) return;
+            if (opacity) value += ", " + opacity;
+            if (typeof console === "object") {
+              console.log(value);
+            }
+          },
+          theme: "bootstrap",
+        });
+      });
+      /*datwpicker*/
+      jQuery(".mydatepicker").datepicker();
+      jQuery("#datepicker-autoclose").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+      });
+      var quill = new Quill("#editor", {
+        theme: "snow",
+      });
+    </script>
   </body>
 </html>

@@ -421,17 +421,6 @@ include('Database/config.php');
                           <td><?php echo $client_row['client_package'] ?></td>
                           <td><?php echo $car_row['rented_date'] ?></td>
                           <td><?php echo $client_row['client_dropoff'] ?></td>
-                          <td>
-                          <div class="container">
-                            <div class="row">
-                              <div class="col">
-                                <div class="d-flex justify-content-between">
-                                  <a href="Database/delete-runig.php?car_id=<?php echo $car_row['car_id']; ?>" class="btn btn-danger ">Delete</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          </td>
                         </tr>
                           <?php
                             }

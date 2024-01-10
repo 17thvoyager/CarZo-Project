@@ -109,7 +109,7 @@ include("DataBase/user-config.php");
             <h5 class="card-title"><?php echo $car_row['car_model']; ?></h5>
             <p class="card-text">Details: <strong><?php echo $car_row['car_description'];?></strong></p>
             <p class="card-text">Package:  <strong><?php  echo $cart_row['client_package'];?></strong></p>
-            <p class="card-text">Payed Price:  <strong><?php  echo $cart_row['client_leaseprice'];?></strong></p>
+            <p class="card-text">Payed Price:  <strong><?php  echo $cart_row['client_leaseprice'];?> INR</strong></p>
             <p class="card-text">Reserved Location:  <strong><?php  echo $cart_row['client_location'];?></strong></p>
             <p class="card-text">Pick-up Date:  <strong><?php  echo $cart_row['client_pickup'];?></strong></p>
             <p class="card-text">Drop-off Date:  <strong><?php echo $cart_row['client_dropoff'];?></strong></p>
